@@ -168,3 +168,13 @@ C:\Users\APT01-59\Desktop\PassaportAuth\API\bin\Debug\net7.0\Microsoft.Extension
 C:\Users\APT01-59\Desktop\PassaportAuth\API\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\APT01-59\Desktop\PassaportAuth\API\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\APT01-59\Desktop\PassaportAuth\API\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\API.staticwebassets.runtime.json
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\obj\Debug\net7.0\API.RazorAssemblyInfo.cache
+C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\obj\Debug\net7.0\API.RazorAssemblyInfo.cs
