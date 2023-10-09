@@ -45,6 +45,9 @@ namespace API.Startup
                 .AddCookie(options =>
                 {
                     options.LoginPath = "/Account/google-login";
+                    options.ExpireTimeSpan = TimeSpan.FromSeconds(30);
+                    options.LogoutPath = "/Account/google-logout";
+
                 })
                 .AddGoogle(options =>
                 {

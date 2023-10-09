@@ -37,5 +37,12 @@ namespace Api.Controllers
             Json(claims);
             return Redirect("https://localhost:7030/Home/Privacy");
         }
+
+        [Route("google-logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return Redirect("https://localhost:7030/Home");
+        }
     }
 }
