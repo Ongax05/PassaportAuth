@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Startup;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Persistence.Data;
 
-namespace RoundTheCode.GoogleAuthentication
+namespace Api
 {
     public class Program
     {

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using API.Models;
 
-namespace RoundTheCode.GoogleAuthentication.Controllers
+namespace Api.Controllers
 {
     [Authorize]
     public class HomeController : Controller
@@ -30,11 +30,8 @@ namespace RoundTheCode.GoogleAuthentication.Controllers
         {
             return View();
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public IActionResult SeeComments (){
+            return View();
         }
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RoundTheCode.GoogleAuthentication.Controllers
+namespace Api.Controllers
 {
     [AllowAnonymous, Route("account")]
     public class AccountController : Controller
@@ -34,8 +34,8 @@ namespace RoundTheCode.GoogleAuthentication.Controllers
                     claim.Type,
                     claim.Value
                 });
-
-            return Json(claims);
+            Json(claims);
+            return Redirect("https://localhost:7030/Home/Privacy");
         }
     }
 }

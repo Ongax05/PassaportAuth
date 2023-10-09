@@ -1,6 +1,85 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Private End Point";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1 class="mt-5" style="font-size: 68px;color:rgb(0, 0, 0) ;text-align: center;">@ViewData["Title"]</h1>
+  <main>
+    <form method="post" onsubmit="event.preventDefault(); SubmitForm();" action= Postcomentario() class="m-5 p-5">
+      <div class="mb-3">
+        <label for="Comentario" class="form-label">Comentario</label>
+        <input type="text" name="Comentario" id="Comentario" class="form-control" placeholder="Comentario" aria-describedby="ComentarioHelp">
+        <small id="ComentarioHelp" class="text-muted">Ingrese el comentario aqui</small>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </main>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
+<script>
+  async function SubmitForm() {
+    const comentario = document.getElementById("Comentario").value;
+        try {
+          const response = await PostComentario(comentario);
+          // Handle the response as needed
+          console.log(response);
+      } catch (error) {
+          // Handle errors
+          console.error(error);
+      }
+    }
+
+  async function PostComentario(Comentario) {
+    return new Promise(async (resolve, reject) => {
+      const dataToSend = {
+        Text : Comentario
+      };
+  
+      try {
+        const response = await fetch("https://localhost:7030/Post", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        });
+  
+        if (response.status === 201) {
+          console.log("Solicitud exitosa");
+          const jsonResponse = await response.json();
+          resolve(jsonResponse);
+        } else {
+          console.error(`Error: ${response.status}\nError msg : ${response.text()} ${await response.text()}`);
+          reject(`Error: ${response.status}\nError msg : ${response.text()}`);
+        }
+      } catch (error) {
+        console.error(`Error en la solicitud: ${error}`);
+        reject(error);
+      }
+    });
+  }
+  
+</script>
