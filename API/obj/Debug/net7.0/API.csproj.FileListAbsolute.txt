@@ -178,3 +178,5 @@ C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\Microsoft.
 C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\obj\Debug\net7.0\API.RazorAssemblyInfo.cache
 C:\Users\jhose\OneDrive\Escritorio\PassaportAuth\API\obj\Debug\net7.0\API.RazorAssemblyInfo.cs
+C:\Users\APT01-59\Desktop\PassaportAuth\API\obj\Debug\net7.0\API.RazorAssemblyInfo.cache
+C:\Users\APT01-59\Desktop\PassaportAuth\API\obj\Debug\net7.0\API.RazorAssemblyInfo.cs

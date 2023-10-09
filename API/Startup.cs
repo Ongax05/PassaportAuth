@@ -1,8 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using API.Controllers;
+using Application.UnitOfWork;
+using AutoMapper;
+using Domain.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +32,8 @@ namespace API.Startup
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddAutoMapper(Assembly.GetEntryAssembly());
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
             services.AddDbContext<PassaportAuthContext>(options=>{
                 string connectionString = Configuration.GetConnectionString("ConexMysql");
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
@@ -46,6 +51,9 @@ namespace API.Startup
                     options.ClientId = "682739648072-ssra7k6sd3s6oohavsju06add7mkrh3g.apps.googleusercontent.com";
                     options.ClientSecret = "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";
                 });
+
+            services.AddControllers();
+            services.AddEndpointsApiExplorer();
 
             services.AddControllersWithViews();
         }

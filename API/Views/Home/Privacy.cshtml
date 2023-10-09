@@ -19,7 +19,7 @@
 <body>
     <h1 class="mt-5" style="font-size: 68px;color:rgb(0, 0, 0) ;text-align: center;">@ViewData["Title"]</h1>
   <main>
-    <form method="post" onsubmit="event.preventDefault(); SubmitForm();" action= Postcomentario() class="m-5 p-5">
+    <form method="post" onsubmit="event.preventDefault(); SubmitForm();" id="Formulario" action= Postcomentario() class="m-5 p-5">
       <div class="mb-3">
         <label for="Comentario" class="form-label">Comentario</label>
         <input type="text" name="Comentario" id="Comentario" class="form-control" placeholder="Comentario" aria-describedby="ComentarioHelp">
@@ -44,7 +44,7 @@
     const comentario = document.getElementById("Comentario").value;
         try {
           const response = await PostComentario(comentario);
-          // Handle the response as needed
+          document.getElementById("Formulario").reset();
           console.log(response);
       } catch (error) {
           // Handle errors
@@ -59,7 +59,7 @@
       };
   
       try {
-        const response = await fetch("https://localhost:7030/Post", {
+        const response = await fetch("https://localhost:7030/Comentario/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
